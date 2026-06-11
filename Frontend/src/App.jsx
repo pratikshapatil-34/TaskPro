@@ -5,6 +5,10 @@ import Layout from './components/Layout';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import NavBar from './components/NavBar';
+import Dashboard from './pages/Dashboard';
+import PendingPage from './pages/PendingPage';
+import CompletePage from "./pages/CompletePage";
+import Profile from './components/Profile';
 
 const App = () => {
   const navigate = useNavigate();
@@ -98,8 +102,17 @@ const App = () => {
             <ProtectedLayout />
           }
         />
-
+        <Route
+        path='/'
+        element={
+          <Dashboard/>
+        }
+        />
+        <Route path='/pending' element={<PendingPage/>}/>
+        <Route path='/complete' element={<CompletePage/>}/>
+        <Route path='/profile' element={<Profile user={currentUser} setCurrentUser={setCurrentUser} onLogout={handleLogout}/>}/>
       </Routes>
+
     </div>
   );
 };

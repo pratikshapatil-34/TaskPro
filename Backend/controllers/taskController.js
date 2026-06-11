@@ -10,13 +10,23 @@ export const createTask = async (req, res) => {
       completed
     } = req.body;
 
+    // Safety check: Ensure the auth middleware successfully passed the user
+    if (!req.user) {
+      return res.status(401).json({
+        success: false,
+        message: "Not authorized, user data missing"
+      });
+    }
+
     const task = await Task.create({
       title,
       description,
-      priority,
+      priority: priority || "medium", // Fallback default value if frontend skips it
       dueDate,
-      completed,
-      owner: req.user._id
+      completed: completed || false, // Fallback default value if frontend skips it
+      
+      // 2. FIX: Safely fallback to req.user.id if req.user._id doesn't exist
+      owner: req.user._id || req.user.id 
     });
 
     res.status(201).json({
@@ -77,7 +87,7 @@ export const updateTask = async (req,res)  => {
         const updated = await Task.findOneAndUpdate(
             {_id:req.params.id,owner :req.user.id },
             data,
-            {new: true , runValidators :true}
+            {returnDocument: 'after' , runValidators :true}
         );
         if(!updated){
             res.status(400).json({success:false,message:"Task not found or not yours"});
