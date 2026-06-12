@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import NavBar from './NavBar';
-import SideBar from './SideBar';
+import NavBar from './Navbar';
+import SideBar from './Sidebar';
 import axios from 'axios';
 import { TrendingUp, Circle, Clock, CheckCircle, Calendar, MessageSquare } from 'lucide-react';
 import Completed from '../pages/CompletePage.jsx';
