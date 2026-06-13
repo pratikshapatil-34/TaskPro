@@ -3,7 +3,7 @@ import axios from 'axios'
 import { HEADER, WRAPPER } from '../assets/dummy'
 import { HomeIcon, Plus, RefreshCw, CheckCircle, Trash2, Circle, Clock, Check, AlertCircle, Calendar, Flag } from 'lucide-react'
 
-const API_BASE = 'http://localhost:4000/api/task'
+const API_BASE = 'https://taskpro-lh99.onrender.com/api/task'
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([])

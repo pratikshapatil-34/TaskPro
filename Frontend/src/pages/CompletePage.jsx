@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CheckCircle, Trash2, RotateCcw, ShieldCheck } from 'lucide-react';
 
-const API_BASE = 'http://localhost:4000/api/task';
+const API_BASE = 'https://taskpro-lh99.onrender.com/api/task';
 
 const CompletePage = ({ fetchTasks }) => {
   const [tasks, setTasks] = useState([]);

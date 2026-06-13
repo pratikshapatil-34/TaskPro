@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import NavBar from './NavBar';
-import SideBar from './SideBar';
+import NavBar from './Navbar.jsx';
+import SideBar from './Sidebar.jsx';
 import axios from 'axios';
 import { TrendingUp, Circle, Clock, CheckCircle, Calendar, MessageSquare } from 'lucide-react';
 import Completed from '../pages/CompletePage.jsx';
@@ -29,7 +29,7 @@ const Layout = ({ onLogout, user, children }) => {
       }
 
       const { data } = await axios.get(
-        'http://localhost:4000/api/user/me',
+        'https://taskpro-lh99.onrender.com/api/user/me',
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -84,7 +84,7 @@ const Layout = ({ onLogout, user, children }) => {
 
   try {
     // Assuming your backend route for updating/toggling tasks is structured like this
-    await axios.put(`http://localhost:4000/api/tasks/${taskId}`, { 
+    await axios.put(`https://taskpro-lh99.onrender.com/api/tasks/${taskId}`, { 
       completed: !currentStatus 
     }, {
       headers: { Authorization: `Bearer ${token}` }

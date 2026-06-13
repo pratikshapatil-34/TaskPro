@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Circle, Trash2, Calendar, AlertCircle } from 'lucide-react';
 
-const API_BASE = 'http://localhost:4000/api/task';
+const API_BASE = 'https://taskpro-lh99.onrender.com/api/task';
 
 const PendingPage = () => {
   const [tasks, setTasks] = useState([]);

@@ -10,7 +10,7 @@ import {
   MESSAGE_SUCCESS
 } from '../assets/dummy.jsx';
 
-const API_URI = 'http://localhost:4000'
+const API_URI = 'https://taskpro-lh99.onrender.com'
 const INITIAL_FORM ={name:"",email:"",password:''}
 
 const SignUp = ({onSwitchMode}) => {

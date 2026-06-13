@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { BACK_BUTTON } from "../assets/dummy.jsx"
 import { ChevronLeft, Save, LogOut } from 'lucide-react'
 
-const API_URL = 'http://localhost:4000'
+const API_URL = 'https://taskpro-lh99.onrender.com'
 
 const Profile = ({ setCurrentUser, onLogout }) => {
   const [profile, setProfile] = useState({ name: "", email: "" })
