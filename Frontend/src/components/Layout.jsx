@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import NavBar from './Navbar.jsx';
-import SideBar from './Sidebar.jsx';
+import NavBar from './NavBar';
+import SideBar from './SideBar';
 import axios from 'axios';
 import { TrendingUp, Circle, Clock, CheckCircle, Calendar, MessageSquare } from 'lucide-react';
 import Completed from '../pages/CompletePage.jsx';
 import Pending from '../pages/PendingPage.jsx';
 import Profile from '../components/Profile.jsx';
-import Dashboard from '../pages/Dashboard.jsx'; // Cleaned duplicate lowercase import
+import Dashboard from '../pages/Dashboard.jsx'; 
 
 const Layout = ({ onLogout, user, children }) => {
 
@@ -29,7 +29,7 @@ const Layout = ({ onLogout, user, children }) => {
       }
 
       const { data } = await axios.get(
-        'https://taskpro-lh99.onrender.com/api/user/me',
+        'http://localhost:4000/api/user/me',
         {
           headers: {
             Authorization: `Bearer ${token}`
