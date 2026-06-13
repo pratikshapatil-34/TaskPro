@@ -4,7 +4,7 @@ import { Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import PendingPage from './pages/PendingPage';
 import CompletePage from "./pages/CompletePage";
