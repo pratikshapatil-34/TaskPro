@@ -29,7 +29,7 @@ const Layout = ({ onLogout, user, children }) => {
       }
 
       const { data } = await axios.get(
-        'http://localhost:4000/api/user/me',
+        'https://taskpro-lh99.onrender.com/api/user/me',
         {
           headers: {
             Authorization: `Bearer ${token}`
